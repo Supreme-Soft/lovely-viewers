@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lovely Viewers</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url('file:///D:/YouTube/man-2178598_1920.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .header-container {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header {
+            background: linear-gradient(to right, #ed75db, #4a90e2, #66d7d1);
+            padding: 16px 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            margin-bottom: 8px;
+            font-size: 26px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        nav {
+            background-color: rgba(217, 170, 100, 0.5);
+            padding: 10px 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            color: #fff;
+            transition: color 0.3s;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        nav a:hover {
+            color: #ff4081;
+        }
+
+        nav a.active {
+            color: #ff4081;
+            font-weight: bold;
+        }
+
+        .content {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #ebdbe01a;
+            text-align: center;
+            max-width: 600px;
+            padding: 20px;
+            border-radius: 5px;
+            z-index: 1000;
+        }
+
+        .content p {
+            font-size: 20px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bold;
+            color: #fff;
+            margin: 20px 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .centered-button {
+            display: inline-block;
+            margin-top: 20px;
+            background-color: transparent;
+            color: #fff;
+            padding: 15px 30px;
+            font-size: 20px;
+            border: 2px solid #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .centered-button:hover {
+            background-color: #fff;
+            color: #ff4081;
+            text-shadow: none;
+        }
+
+        .footer {
+            text-align: center;
+            position: fixed;
+            bottom: 10px;
+            width: 100%;
+            color: #fff;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-link {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 5px;
+            border-bottom: 1px solid #fff;
+            /* Add underline */
+        }
+
+        .footer-link:hover {
+            color: #ff4081;
+            border-bottom-color: #ff4081;
+        }
+
+        .icon-link {
+
+            text-decoration: none;
+        }
+
+        .youtube-icon {
+            color: #ff0000;
+            margin-right: 10px;
+        }
+
+        .github-icon {
+            color: #1f2328;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+
+<body>
+    <div class="header-container">
+        <header>
+            <h1>Welcome Lovely Viewers!</h1>
+            <span>
+                <a href="https://www.youtube.com/@supreme-soft" class="icon-link youtube-icon" target="_blank">
+                    <i class="fab fa-youtube fa-2x"></i>
+                </a>
+                <a href="https://github.com/Supreme-Soft" class="icon-link github-icon" target="_blank">
+                    <i class="fab fa-github fa-2x"></i>
+                </a>
+            </span>
+        </header>
+        <nav>
+            <a href="#" class="active">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+    </div>
+    <div class="content">
+        <p>Life is a journey of exploration, continual learning, and limitless growth.</p>
+        <button class="centered-button">Start your journey!</button>
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <span>We respect the owner of the image.</span>
+            <span>Image by <a href="https://pixabay.com/photos/man-resting-person-cliff-edge-2178598/"
+                    class="footer-link" target="_blank">Pexels</a> from <a href="https://pixabay.com/"
+                    class="footer-link" target="_blank">Pixabay</a> | <a
+                    href="https://pixabay.com/photos/man-resting-person-cliff-edge-2178598/" class="footer-link"
+                    target="_blank">Man, Resting, Person</a></span>
+            <span>&copy; 2024 Lovely Viewers. All Rights Reserved.</span>
+        </div>
+    </footer>
+    <canvas id="canvas"></canvas>
+    <script>
+        const canvas = document.getElementById('canvas');
+        const context = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const particles = [];
+        const numParticles = Math.min(Math.floor(canvas.width * canvas.height / 5000), 300);
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.vx = Math.random() * 2 - 1;
+                this.vy = Math.random() * 2 - 1;
+                this.radius = Math.random() * 3 + 1;
+                this.color = `rgba(255, 255, 255, ${Math.random()})`;
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+
+                if (this.x < 0 || this.x > canvas.width) {
+                    this.vx *= -1;
+                }
+
+                if (this.y < 0 || this.y > canvas.height) {
+                    this.vy *= -1;
+                }
+            }
+
+            draw() {
+                context.beginPath();
+                context.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                context.fillStyle = this.color;
+                context.fill();
+            }
+        }
+
+        function createParticles() {
+            for (let i = 0; i < numParticles; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function animate() {
+            context.clearRect(0, 0, canvas.width, canvas.height);
+
+            particles.forEach(particle => {
+                particle.update();
+                particle.draw();
+            });
+
+            requestAnimationFrame(animate);
+        }
+
+        createParticles();
+        animate();
+
+        canvas.addEventListener('mousemove', (event) => {
+            particles.forEach(particle => {
+                const dx = particle.x - event.clientX;
+                const dy = particle.y - event.clientY;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+
+                if (distance < 100) {
+                    particle.vx = dx * 0.05;
+                    particle.vy = dy * 0.05;
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
