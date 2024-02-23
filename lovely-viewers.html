@@ -134,6 +134,7 @@
         .footer-link:hover {
             color: #ff4081;
             border-bottom-color: #ff4081;
+            cursor: pointer;
         }
 
         .icon-link {
@@ -148,6 +149,22 @@
 
         .github-icon {
             color: #1f2328;
+        }
+
+        ul.credit-links {
+            list-style-type: circle;
+        }
+
+        ul.credit-links li {
+            margin-bottom: 5px;
+        }
+
+        ul.credit-links li {
+            font-size: 14px;
+        }
+
+        .credits {
+            display: none;
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -179,19 +196,45 @@
     </div>
     <footer class="footer">
         <div class="footer-content">
-            <p>Image credits go to the creators, provided under Creative Commons licenses.</p>
+            <p>Image credits go to the <a class="footer-link" onclick="openCredit()">creators</a>, provided under
+                Creative Commons licenses.</p>
 
-            <span>Image by <a
-                    href="https://pixabay.com/users/pexels-2286921/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2178598"
-                    class="footer-link" target="_blank">Pexels</a> from <a href="https://pixabay.com/"
-                    class="footer-link" target="_blank">Pixabay</a> | <a
-                    href="https://pixabay.com/photos/man-resting-person-cliff-edge-2178598/" class="footer-link"
-                    target="_blank">Man, Resting, Person</a></span>
+            <div class="credits" style="display: none;">
+                <ul class="credit-links">
+                    <li>Image by <a
+                            href="https://pixabay.com/users/pexels-2286921/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2178598"
+                            class="footer-link" target="_blank">Pexels</a> from <a href="https://pixabay.com/"
+                            class="footer-link" target="_blank">Pixabay</a> | <a
+                            href="https://pixabay.com/photos/man-resting-person-cliff-edge-2178598/" class="footer-link"
+                            target="_blank">Man, Resting, Person</a></li>
+                </ul>
+            </div>
             <p>&copy; 2024 <a class="footer-link" href="https://supreme-soft.blogspot.com">Supreme Soft</a>. All Rights
                 Reserved.</a></p>
         </div>
     </footer>
     <canvas id="canvas"></canvas>
+    <script>
+        function openCredit(event) {
+            var credits = document.querySelector('.credits');
+            if (credits.style.display === 'none') {
+                credits.style.display = 'block';
+            } else {
+                credits.style.display = 'none';
+            }
+            event.stopPropagation(); // Prevent the click event from bubbling up to the document
+        }
+
+        document.addEventListener('click', function (event) {
+            var credits = document.querySelector('.credits');
+            var link = document.querySelector('.footer-link');
+            var isCreditsClicked = credits.contains(event.target) || event.target === link;
+            if (!isCreditsClicked) {
+                credits.style.display = 'none'; // Hide the credits section if the click is outside of it
+            }
+        });
+
+    </script>
     <script>
         const canvas = document.getElementById('canvas');
         const context = canvas.getContext('2d');
