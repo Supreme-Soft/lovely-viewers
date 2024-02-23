@@ -8,7 +8,7 @@
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-image: url('file:///D:/YouTube/man-2178598_1920.jpg');
+            background-image: url('man-2178598_1920.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -128,7 +128,6 @@
             text-decoration: none;
             margin: 0 5px;
             border-bottom: 1px solid #fff;
-            /* Add underline */
         }
 
         .footer-link:hover {
@@ -222,7 +221,7 @@
             } else {
                 credits.style.display = 'none';
             }
-            event.stopPropagation(); // Prevent the click event from bubbling up to the document
+            event.stopPropagation();
         }
 
         document.addEventListener('click', function (event) {
@@ -230,7 +229,7 @@
             var link = document.querySelector('.footer-link');
             var isCreditsClicked = credits.contains(event.target) || event.target === link;
             if (!isCreditsClicked) {
-                credits.style.display = 'none'; // Hide the credits section if the click is outside of it
+                credits.style.display = 'none';
             }
         });
 
