@@ -16,9 +16,8 @@ Explore this demo to understand JavaScript's potential for creating interactive 
 Feel free to contribute to this project by suggesting improvements or adding new features. Fork the repository, make your changes, and submit a pull request.
 
 ## Credits:
-- This demo draws inspiration from various JavaScript animation tutorials.
+- This demo draws inspiration from various JavaScript animation tutorials and websites.
 - Background image sourced from [Pixabay](https://pixabay.com/photos/man-resting-person-cliff-edge-2178598/).
-- Font icons provided by [Font Awesome](https://fontawesome.com/).
 
 ## License:
 This project is licensed under the MIT License, allowing for free use and modification.
