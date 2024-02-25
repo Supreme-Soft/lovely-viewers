@@ -1,4 +1,4 @@
-# JavaScript Canvas Animation: Particle Interaction with Mouse
+# JavaScript Particle Animation: Interactive Mouse Effects
 Welcome, everyone! The file `lovely-viewers.html` features the initial animation using JavaScript, and it's also highlighted in our YouTube video.
 
 ## About:
