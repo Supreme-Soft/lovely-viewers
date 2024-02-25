@@ -13,7 +13,7 @@ This project showcases JavaScript's ability to create web animations. It feature
 Explore this demo to understand JavaScript's potential for creating interactive animations. Interact with the particles using your mouse to see JavaScript in action. You can view the live demo on [CodePen](https://codepen.io/Supreme-Soft/pen/yLwddqK).
 
 ## Contributing:
-Feel free to contribute to this project by suggesting improvements or adding new features. Fork the repository, make your changes, and submit a pull request.
+Feel free to contribute to this project by suggesting improvements or adding new features. Fork the repository, make your changes, and submit a pull request. Don't forget to share your CodePen with us! We welcome your contributions!
 
 ## Credits:
 - This demo draws inspiration from various JavaScript animation tutorials and websites.
