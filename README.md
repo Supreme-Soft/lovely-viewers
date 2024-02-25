@@ -19,8 +19,5 @@ Feel free to contribute to this project by suggesting improvements or adding new
 - This demo draws inspiration from various JavaScript animation tutorials and websites.
 - Background image sourced from [Pixabay](https://pixabay.com/photos/man-resting-person-cliff-edge-2178598/).
 
-## License:
-This project is licensed under the MIT License, allowing for free use and modification.
-
 ## Contact:
 For any questions or feedback, please reach out to the project maintainer.
