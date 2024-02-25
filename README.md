@@ -17,7 +17,7 @@ Feel free to contribute to this project by suggesting improvements or adding new
 
 ## Credits:
 - This demo draws inspiration from various JavaScript animation tutorials.
-- Background image sourced from [Pixabay]([https://pixabay.com/](https://pixabay.com/photos/man-resting-person-cliff-edge-2178598/)).
+- Background image sourced from [Pixabay](https://pixabay.com/photos/man-resting-person-cliff-edge-2178598/).
 - Font icons provided by [Font Awesome](https://fontawesome.com/).
 
 ## License:
