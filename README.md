@@ -1,4 +1,4 @@
-# lovely-viewers
+# JavaScript Canvas Animation: Particle Interaction with Mouse
 Welcome, everyone! The file `lovely-viewers.html` features the initial animation using JavaScript, and it's also highlighted in our YouTube video.
 
 ## About:
